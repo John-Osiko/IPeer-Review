@@ -1,0 +1,6 @@
+.env
+.vscode/
+revprojo/__pycache__
+peerapp/__pycache__
+=1.14.0
+db.sqlite3
