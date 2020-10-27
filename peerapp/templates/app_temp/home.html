@@ -1,0 +1,85 @@
+{% extends 'base.html'%}
+{% load static%}
+
+
+{% block content %}
+<section class="main-banner" id="home">
+
+    <div class="container">
+
+        <div class="baner-info-w3ls text-left">
+            <h1 id="heading"><a href="/">IPeer-Review</a></h1>
+            <h6 class="mx-auto mt-4" id="heading-small">Projects Collection</h6> <a class="btn btn-primary mt-lg-5 mt-3 agile-link-bnr scroll" href="#about" role="button">Explore more</a>
+
+            <div class="banner-high-lights text-left">
+                <div class="rotate">
+                    <a href="#about" class="scroll"><span class="fa fa-long-arrow-down"></span> </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- what we do -->
+<section id="about">
+
+    <div class="container">
+
+        <div class="text-center">
+            <h3 class="title_head mt-5">Search projects</h3>
+
+            <form class="form-input" role="search" action="/search">
+
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search Projects..." name="image">
+
+                    <div class="input-group-btn">
+                        <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- Gallery -->
+<section class="gallery py-5" id="gallery">
+
+    <div class="container">
+
+        <div class="inner-sec-wthree py-lg-5 py-3">
+
+            <div class="text-center">
+                <h3 class="tittle_head">Collection</h3>
+
+                <p class="main_p mt-4 mb-4 pt-2 text-center mx-auto">A collection of projects.</p>
+            </div>
+
+            <div class="row news-grids mt-lg-5 mt-4 text-center">
+                {%for image in all_images %}
+
+                <div class="col-md-4 gal-img">
+                    <a href="#gal1"><img src="{{image.image.url}}" alt="gallery img" class="img-fluid"></a>
+                    <div class="mr-3 ml-3">
+                        <p class="mt-2">{{image.title}}</p>
+                        <div class="user-details ext-uppercase">
+                            <p>from location</p>
+                            <p> date</p>
+
+                        </div>
+                        <div class="p-and-t-row">
+                            <div class="prof-row">
+                                <img src="" alt="">
+                                <p>By {{user.user.name}} name</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
