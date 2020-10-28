@@ -42,7 +42,7 @@
             </p>
             <p>{{ post.description }}</p>
             <hr>
-            <p class="card-text "><img src="{{post.user.profile.profile_picture.url}}" class="nav-img mr-2" alt="">By {{post.user.username|title}} <span style="float:right">{{post.date|date}}</span>
+            <p class="card-text "><img src="{{post.user.profile.profile_picture.url|default_if_none:'#' }}" class="nav-img mr-2 img-circle" alt="">By {{post.user.username|title}} <span style="float:right">{{post.date|date}}</span>
             </p>
             {% if user.is_authenticated %}
             <form action="" method="post" enctype="multipart/form-data">
