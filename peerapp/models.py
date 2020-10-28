@@ -30,7 +30,6 @@ class Profile(models.Model):
     @classmethod
     def get_profile_data(cls):
         return Profile.objects.all()
-
     class Meta:
         db_table = 'profiles'
 
@@ -65,6 +64,14 @@ class Project(models.Model):
     def search_project_by_title(cls, search_term):
         project = cls.objects.filter(title__icontains=search_term)
         return project
+    
+    @property
+    def image_url(self):
+        if self.image and hasattr(self.image, 'url'):
+            return self.image.url
+        else:
+            return "static/images/frida-bredesen-IxlY2KB4Krs-unsplash.jpg"
+
 
     class Meta:
         db_table = 'projects'
