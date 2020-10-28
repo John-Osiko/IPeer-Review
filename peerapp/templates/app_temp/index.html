@@ -158,10 +158,10 @@
                                                 <h3><a href="/">{{image.title}}</a></h3>
                                             </div>
                                             <div class="row">
-                                                <div class="box-left">From Kenya</div>
+                                                <div class="box-left">From Kenya-</div>
 
                                                 <div class="box-right">
-                                                    October 18, 2019
+                                                    October 28, 2020
                                                 </div>
                                             </div>
                                         </div>
@@ -170,13 +170,12 @@
                                                 <div class="box-byuser js-tooltip-user">
                                                     <div class="item js-user" data-username="thecouch">
                                                         <a href="">
-                                                            <img src="{{image.user.prof_user.profile_picture.url}}"
-                                                                 width="27"
-                                                                 height="27" alt="{{image.title}}" class="lazy"/>
+                                                            <img src="{{image.user.prof_user.profile_picture.url}}" width="27" height="27" alt="{{image.title}}" class="lazy"/>
                                                         </a>
                                                     </div>
                                                     <div class="by">
-                                                        Content by <strong><a href="{% url 'profile' image.user.username%}" class="text-black">{{image.user.username}}</a></strong>
+                                                        Content by <strong><a href="{% url 'profile' image.user.username%}" class="text-black">{{image.user.username}}</a></strong><br>
+                                                        <a target="_blank" href="{{image.link}}"><strong>Visit Website</strong></a>
                                                     </div>
                                                 </div>
 
