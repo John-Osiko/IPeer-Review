@@ -60,7 +60,7 @@
                 {%for image in all_images %}
 
                 <div class="col-md-4 gal-img">
-                    <a href="#gal1"><img src="{{image.image.url}}" alt="gallery img" class="img-fluid"></a>
+                    <a href="#gal1"><img src="{{image.image.url|default_if_none:'#' }}" alt="gallery img" class="img-fluid"></a>
                     <div class="mr-3 ml-3">
                         <p class="mt-2">{{image.title}}</p>
                         <div class="user-details ext-uppercase">
