@@ -49,27 +49,7 @@ def signup(request):
 
 @login_required(login_url='login')
 def profile(request, username):
-    return render(request, 'app_temp/profile.html')
-
-
-@login_required(login_url='login')
-def edit_profile(request, username):
-    user = User.objects.get(username=username)
-    if request.method == 'POST':
-        user_form = UpdateUserForm(request.POST, instance=request.user)
-        prof_form = UpdateUserProfileForm(request.POST, request.FILES, instance=request.user.profile)
-        if user_form.is_valid() and prof_form.is_valid():
-            user_form.save()
-            prof_form.save()
-            return redirect('profile', user.username)
-    else:
-        uform = UpdateUserForm(instance=request.user)
-        pform = UpdateUserProfileForm(instance=request.user.profile)
-    params = {
-        'user_form': uform,
-        'prof_form': pform,
-    }
-    return render(request, 'app_temp/edit.html', params)
+    return render(request, 'app_temp/user_profile.html')
 
 
 def upload(request):
@@ -116,7 +96,7 @@ def profile_view(request):
         'profile': profile
     }
 
-    return render('app_temp/profile.html', profile_data)
+    return render('app_temp/user_profile.html', profile_data)
 
 
 def project_view(request, post):
