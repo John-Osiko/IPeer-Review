@@ -1,0 +1,1 @@
+web: gunicorn revprojo.wsgi --log-file -
