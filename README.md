@@ -2,7 +2,7 @@
 
 ###  Author
 #### JOHN OSIKO
-Gram Lite is a Python/Django application.
+IPeer-Review is a Python/Django application.
 
 ## Description
 IPeer-Review is a Python/Django application inspired and built as a clone of the popular website Awwwards. It is an application that allows users to post projects that they have created and get it reviewed by their peers.

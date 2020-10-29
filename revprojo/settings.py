@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
-#import django_heroku
+import django_heroku
 import dj_database_url
 from decouple import config,Csv
 # os.environ.setdefault("DJANGO_SETTINGS_MODULE", "revprojo.settings")
@@ -175,4 +175,4 @@ LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = '/'
 
 # Configure Django App for Heroku.
-#django_heroku.settings(locals())
+django_heroku.settings(locals())
